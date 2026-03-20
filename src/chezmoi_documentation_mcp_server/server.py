@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from contextlib import asynccontextmanager
+
 from mcp.server.fastmcp import FastMCP
 
 from .docs_client import ChezmoiDocumentationClient, ServerConfig
@@ -8,6 +10,14 @@ from .docs_client import ChezmoiDocumentationClient, ServerConfig
 def create_server() -> FastMCP:
     config = ServerConfig.from_env()
     client = ChezmoiDocumentationClient(config)
+
+    @asynccontextmanager
+    async def lifespan(_: FastMCP):
+        try:
+            yield
+        finally:
+            await client.aclose()
+
     server = FastMCP(
         "chezmoi-documentation-mcp-server",
         instructions=(
@@ -19,6 +29,7 @@ def create_server() -> FastMCP:
             "httpx",
             "markdownify",
         ],
+        lifespan=lifespan,
     )
 
     @server.tool()
