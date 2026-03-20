@@ -24,11 +24,11 @@ This server is inspired by the shape of the AWS documentation MCP server and foc
 
 ## Installation
 
-### Install in VS Code
+### Install on VS Code
 
 If you have [`uv`](https://docs.astral.sh/uv/getting-started/installation/) installed, you can add this server to VS Code from GitHub:
 
-[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_chezmoi_Documentation_MCP-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](vscode:mcp/install?%7B%22name%22%3A%22chezmoi-documentation%22%2C%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22git%2Bhttps%3A//github.com/llamakko/chezmoi-documentation-mcp-server.git%22%2C%22chezmoi-documentation-mcp-server%22%5D%2C%22env%22%3A%7B%22FASTMCP_LOG_LEVEL%22%3A%22ERROR%22%7D%7D)
+[![Install on VS Code](https://img.shields.io/badge/Install_on-VS_Code-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=chezmoi-documentation&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22git%2Bhttps%3A//github.com/llamakko/chezmoi-documentation-mcp-server.git%22%2C%22chezmoi-documentation-mcp-server%22%5D%2C%22env%22%3A%7B%22FASTMCP_LOG_LEVEL%22%3A%22ERROR%22%7D%7D)
 
 Equivalent CLI command:
 
