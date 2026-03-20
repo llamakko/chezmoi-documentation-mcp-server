@@ -124,7 +124,7 @@ Parameters:
 | `CHEZMOI_DOCUMENTATION_MAX_LIST_RESULTS` | Upper bound for `list_documentation_pages(limit=...)` | `200` |
 | `CHEZMOI_DOCUMENTATION_RATE_LIMIT_CALLS` | Maximum tool calls per rate-limit window | `30` |
 | `CHEZMOI_DOCUMENTATION_RATE_LIMIT_PERIOD_SECONDS` | Rate-limit window length in seconds | `60` |
-| `MCP_USER_AGENT` | Optional custom user agent for HTTP requests | — |
+| `MCP_USER_AGENT` | Optional custom user agent for HTTP requests. If unset, the server uses its built-in user agent string | built-in |
 
 ## Security
 
