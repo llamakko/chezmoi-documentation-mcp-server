@@ -29,9 +29,12 @@ jobs:
       - name: Verify tag commit is on the default branch history
         env:
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          TAG_SHA: ${{ github.sha }}
         run: |
-          git fetch --no-tags origin "${DEFAULT_BRANCH}"
-          if ! git merge-base --is-ancestor HEAD FETCH_HEAD; then
+          COMPARE_STATUS="$(gh api "repos/${REPOSITORY}/compare/${TAG_SHA}...${DEFAULT_BRANCH}" --jq '.status')"
+          if [ "${COMPARE_STATUS}" != "ahead" ] && [ "${COMPARE_STATUS}" != "identical" ]; then
             echo "::error::Release tags must point to commits reachable from ${DEFAULT_BRANCH}."
             exit 1
           fi
