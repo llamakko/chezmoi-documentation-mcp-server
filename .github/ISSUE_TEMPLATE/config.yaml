@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security Vulnerability Report
+    url: https://github.com/llamakko/chezmoi-documentation-mcp-server/security/advisories/new
+    about: Report security vulnerabilities privately. If private vulnerability reporting is unavailable, follow SECURITY.md.
+  - name: Security Policy
+    url: https://github.com/llamakko/chezmoi-documentation-mcp-server/blob/main/SECURITY.md
+    about: Read the project's security policy and disclosure guidance.

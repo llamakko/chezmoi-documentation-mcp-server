@@ -1,0 +1,13 @@
+# Replace @llamakko if your GitHub username differs.
+
+# Default ownership for the whole repository
+* @llamakko
+
+# GitHub automation and repository policy files
+/.github/ @llamakko
+/AGENTS.md @llamakko
+/README.md @llamakko
+
+# Application code and tests
+/src/ @llamakko
+/tests/ @llamakko

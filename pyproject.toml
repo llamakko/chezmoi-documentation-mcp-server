@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chezmoi-documentation-mcp-server"
+version = "0.1.0"
+description = "MCP server for the official chezmoi documentation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "llamakko" }
+]
+dependencies = [
+  "beautifulsoup4>=4.13,<5",
+  "httpx>=0.28,<1",
+  "markdownify>=1.1,<2",
+  "mcp[cli]>=1.9.4,<2",
+]
+
+[project.scripts]
+chezmoi-documentation-mcp-server = "chezmoi_documentation_mcp_server.__main__:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
