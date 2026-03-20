@@ -137,6 +137,14 @@ Run tests:
 PYTHONPATH=src python3 -m unittest discover -s tests
 ```
 
+Run a low-impact live smoke check against the official docs:
+
+```bash
+PYTHONPATH=src python3 scripts/smoke_check.py
+```
+
+The smoke check fetches one representative documentation page and verifies that page parsing and section extraction still work. It intentionally avoids a broad crawl so it can be run regularly with minimal load on `chezmoi.io`.
+
 Validate pinned GitHub Actions with pinact:
 
 ```bash
@@ -149,6 +157,8 @@ Update pinned GitHub Actions with pinact:
 ```bash
 pinact run -u
 ```
+
+GitHub Actions also includes a scheduled `Smoke Check` workflow that runs weekly and is available via `workflow_dispatch`.
 
 ## GitHub Release Setup
 

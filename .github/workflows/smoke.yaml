@@ -1,0 +1,43 @@
+name: Smoke Check
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: smoke-${{ github.workflow }}-${{ github.ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    name: Low-Impact Docs Smoke Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install package
+        run: python -m pip install -e .
+
+      - name: Run low-impact smoke check
+        env:
+          CHEZMOI_DOCUMENTATION_REQUEST_TIMEOUT_SECONDS: "15"
+          FASTMCP_LOG_LEVEL: "ERROR"
+        run: python scripts/smoke_check.py
