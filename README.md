@@ -108,7 +108,7 @@ Parameters:
 | Variable | Description | Default |
 | --- | --- | --- |
 | `CHEZMOI_DOCUMENTATION_BASE_URL` | Base URL for docs crawling | `https://www.chezmoi.io/` |
-| `CHEZMOI_DOCUMENTATION_ALLOW_UNOFFICIAL_BASE_URL` | Set to `true` only for local development against a non-official docs mirror | unset |
+| `CHEZMOI_DOCUMENTATION_ALLOW_UNOFFICIAL_BASE_URL` | Set to `true` only for local development against a non-official docs mirror | — |
 | `CHEZMOI_DOCUMENTATION_MAX_PAGES` | Maximum number of pages to crawl for the search index | `350` |
 | `CHEZMOI_DOCUMENTATION_CONCURRENCY` | Concurrent fetches while building the index | `10` |
 | `CHEZMOI_DOCUMENTATION_CACHE_TTL_SECONDS` | Cached search index lifetime in seconds | `3600` |
@@ -124,7 +124,7 @@ Parameters:
 | `CHEZMOI_DOCUMENTATION_MAX_LIST_RESULTS` | Upper bound for `list_documentation_pages(limit=...)` | `200` |
 | `CHEZMOI_DOCUMENTATION_RATE_LIMIT_CALLS` | Maximum tool calls per rate-limit window | `30` |
 | `CHEZMOI_DOCUMENTATION_RATE_LIMIT_PERIOD_SECONDS` | Rate-limit window length in seconds | `60` |
-| `MCP_USER_AGENT` | Optional custom user agent for HTTP requests | unset |
+| `MCP_USER_AGENT` | Optional custom user agent for HTTP requests | — |
 
 ## Security
 
