@@ -105,24 +105,26 @@ Parameters:
 
 ## Environment variables
 
-- `CHEZMOI_DOCUMENTATION_BASE_URL`: Base URL for docs crawling. Defaults to `https://www.chezmoi.io/`
-- `CHEZMOI_DOCUMENTATION_ALLOW_UNOFFICIAL_BASE_URL`: Set to `true` only for local development against a non-official docs mirror
-- `CHEZMOI_DOCUMENTATION_MAX_PAGES`: Maximum number of pages to crawl for the search index. Defaults to `350`
-- `CHEZMOI_DOCUMENTATION_CONCURRENCY`: Concurrent fetches while building the index. Defaults to `10`
-- `CHEZMOI_DOCUMENTATION_CACHE_TTL_SECONDS`: How long to keep the cached search index before refreshing. Defaults to `3600`
-- `CHEZMOI_DOCUMENTATION_REQUEST_TIMEOUT_SECONDS`: HTTP timeout per request. Defaults to `20`
-- `CHEZMOI_DOCUMENTATION_MAX_REDIRECTS`: Maximum redirects to follow after validating each hop. Defaults to `5`
-- `CHEZMOI_DOCUMENTATION_MAX_RESPONSE_BYTES`: Maximum HTML response size in bytes. Defaults to `3145728`
-- `CHEZMOI_DOCUMENTATION_MAX_DOCUMENT_CHARS`: Maximum Markdown/text characters returned from a page or section. Defaults to `120000`
-- `CHEZMOI_DOCUMENTATION_MAX_QUERY_LENGTH`: Maximum search/filter query length. Defaults to `240`
-- `CHEZMOI_DOCUMENTATION_MAX_SECTION_COUNT`: Maximum requested sections per call. Defaults to `12`
-- `CHEZMOI_DOCUMENTATION_MAX_SECTION_LENGTH`: Maximum length of a section heading match string. Defaults to `120`
-- `CHEZMOI_DOCUMENTATION_MAX_URL_LENGTH`: Maximum documentation URL length. Defaults to `2048`
-- `CHEZMOI_DOCUMENTATION_MAX_SEARCH_RESULTS`: Upper bound for `search_documentation(limit=...)`. Defaults to `20`
-- `CHEZMOI_DOCUMENTATION_MAX_LIST_RESULTS`: Upper bound for `list_documentation_pages(limit=...)`. Defaults to `200`
-- `CHEZMOI_DOCUMENTATION_RATE_LIMIT_CALLS`: Maximum tool calls per process window. Defaults to `30`
-- `CHEZMOI_DOCUMENTATION_RATE_LIMIT_PERIOD_SECONDS`: Rate-limit window length. Defaults to `60`
-- `MCP_USER_AGENT`: Optional custom user agent for HTTP requests
+| Variable | Description | Default |
+| --- | --- | --- |
+| `CHEZMOI_DOCUMENTATION_BASE_URL` | Base URL for docs crawling | `https://www.chezmoi.io/` |
+| `CHEZMOI_DOCUMENTATION_ALLOW_UNOFFICIAL_BASE_URL` | Set to `true` only for local development against a non-official docs mirror | — |
+| `CHEZMOI_DOCUMENTATION_MAX_PAGES` | Maximum number of pages to crawl for the search index | `350` |
+| `CHEZMOI_DOCUMENTATION_CONCURRENCY` | Concurrent fetches while building the index | `10` |
+| `CHEZMOI_DOCUMENTATION_CACHE_TTL_SECONDS` | Cached search index lifetime in seconds | `3600` |
+| `CHEZMOI_DOCUMENTATION_REQUEST_TIMEOUT_SECONDS` | HTTP timeout per request in seconds | `20` |
+| `CHEZMOI_DOCUMENTATION_MAX_REDIRECTS` | Maximum redirects to follow after validating each hop | `5` |
+| `CHEZMOI_DOCUMENTATION_MAX_RESPONSE_BYTES` | Maximum HTML response size in bytes | `3145728` |
+| `CHEZMOI_DOCUMENTATION_MAX_DOCUMENT_CHARS` | Maximum Markdown/text characters returned from a page or section | `120000` |
+| `CHEZMOI_DOCUMENTATION_MAX_QUERY_LENGTH` | Maximum search or filter query length | `240` |
+| `CHEZMOI_DOCUMENTATION_MAX_SECTION_COUNT` | Maximum requested sections per call | `12` |
+| `CHEZMOI_DOCUMENTATION_MAX_SECTION_LENGTH` | Maximum section heading match length | `120` |
+| `CHEZMOI_DOCUMENTATION_MAX_URL_LENGTH` | Maximum documentation URL length | `2048` |
+| `CHEZMOI_DOCUMENTATION_MAX_SEARCH_RESULTS` | Upper bound for `search_documentation(limit=...)` | `20` |
+| `CHEZMOI_DOCUMENTATION_MAX_LIST_RESULTS` | Upper bound for `list_documentation_pages(limit=...)` | `200` |
+| `CHEZMOI_DOCUMENTATION_RATE_LIMIT_CALLS` | Maximum tool calls per rate-limit window | `30` |
+| `CHEZMOI_DOCUMENTATION_RATE_LIMIT_PERIOD_SECONDS` | Rate-limit window length in seconds | `60` |
+| `MCP_USER_AGENT` | Optional custom user agent for HTTP requests. If unset, the server uses its built-in user agent string | built-in |
 
 ## Security
 
