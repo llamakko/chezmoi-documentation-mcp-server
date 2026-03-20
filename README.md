@@ -24,6 +24,20 @@ This server is inspired by the shape of the AWS documentation MCP server and foc
 
 ## Installation
 
+### Install in VS Code
+
+If you have [`uv`](https://docs.astral.sh/uv/getting-started/installation/) installed, you can add this server to VS Code from GitHub:
+
+[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_chezmoi_Documentation_MCP-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](vscode:mcp/install?%7B%22name%22%3A%22chezmoi-documentation%22%2C%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22git%2Bhttps%3A//github.com/llamakko/chezmoi-documentation-mcp-server.git%22%2C%22chezmoi-documentation-mcp-server%22%5D%2C%22env%22%3A%7B%22FASTMCP_LOG_LEVEL%22%3A%22ERROR%22%7D%7D)
+
+Equivalent CLI command:
+
+```bash
+code --add-mcp '{"name":"chezmoi-documentation","command":"uvx","args":["--from","git+https://github.com/llamakko/chezmoi-documentation-mcp-server.git","chezmoi-documentation-mcp-server"],"env":{"FASTMCP_LOG_LEVEL":"ERROR"}}'
+```
+
+This adds the server to your VS Code user profile.
+
 ### Local development install
 
 ```bash
@@ -48,7 +62,7 @@ pip install -e .
 }
 ```
 
-If you publish the package, you can switch the command to `uvx` or your preferred package runner.
+If you prefer to install without a local checkout, you can switch the command to `uvx` or your preferred package runner.
 
 Prefer absolute paths and avoid wrapping the server launch in a shell command. This follows the MCP guidance for reducing local-server execution risk.
 
