@@ -178,6 +178,8 @@ GitHub Actions also includes a scheduled `Smoke Check` workflow that runs weekly
 
 Before pushing a release tag, configure the `github-release` environment in your repository settings.
 
+This project uses Semantic Versioning. Release tags follow the `vMAJOR.MINOR.PATCH` format, for example `v0.1.0`.
+
 Recommended settings:
 
 - Add required reviewers
